@@ -1,0 +1,27 @@
+A maven plugin that transforms .less files into .css with css compression and inlining features.
+
+Sample usage:
+
+            <plugin>
+                <groupId>it.wingstech</groupId>
+                <artifactId>csslesser</artifactId>
+                <version>1.1-SNAPSHOT</version>
+                <executions>
+                    <execution>
+                        <id>lessify</id>
+                        <goals>
+                            <goal>lessify</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <cssCompress>true</cssCompress>
+                    <lessify>true</lessify>
+                    <cssInline>true</cssInline>
+                    <lessResources>
+                      <resource>
+                          <directory>src/main/less</directory>
+                      </resource>
+                    </lessResources>
+                </configuration>
+            </plugin>
