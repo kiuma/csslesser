@@ -118,7 +118,7 @@ public class LessifyMojo
         for (Resource resource : lessResources)
         {
             String[] resources = getIncludedFiles(resource);
-            String directory = resource.getDirectory();//.replace('\\', File.separatorChar).replace('/',File.separatorChar);
+            String directory = resource.getDirectory();
             getLog().info("Copying resources...");
             for (String path : resources)
             {
@@ -270,7 +270,7 @@ public class LessifyMojo
 
                     if (!urlImage.startsWith("/"))
                     {
-                        urlImage = prefix + "/" + urlImage;//minimizePath(new File(currPrefix + "/" + urlImage));
+                        urlImage = prefix + "/" + urlImage;
                     }
                     mImgReplacement.appendReplacement(sbIncludeImages, "url('" + urlImage + "')");
 
@@ -295,13 +295,5 @@ public class LessifyMojo
         String path = f.getCanonicalPath().substring(f2.getCanonicalPath().length() + 1).replaceAll("\\\\", "/");
         return path;
     }
-//    public Resource[] getLessResources()
-//    {
-//        return lessResources;
-//    }
-//
-//    public void setLessResources(Resource[] lessResources)
-//    {
-//        this.lessResources = lessResources;
-//    }
+
 }
